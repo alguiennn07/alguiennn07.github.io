@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transiciones</title>
+    <style>
+        @import 'tailwindcss';
+        body {
+            background: black;
+        }
+        .tra {
+            transition: 0.5s ease-out;
+            background: #ff96ad;
+            border-radius: 26px;
+        }
+        .tra:hover {
+            background: #ff96ad;
+            box-shadow: 0 0 5px #ff96ad, 0 0 25px #ff96ad, 0 0 50px #ff96ad, 0 0 200px #ff96ad;
+        }
+
+        .tra:active {
+            box-shadow: -840px 0px #ff96ad, 0 0 25px #ff96ad, 0 0 50px #ff96ad, 0 0 200px #ff96ad; ;
+        }
+
+        .dou {
+            background: blue ;
+            border-radius: 5px;
+                 
+        }
+
+        .dou:hover {
+            box-shadow: 20px 20px red;
+        }
+
+       .dou:active {
+        box-shadow: -20px -20px rgb(128, 0, 128);
+       }
+    
+       .apa {
+        background: red;
+       }
+       .apa:hover {
+        color: white;
+        background: black;
+        border: 3px solid pink;
+       }
+
+        .apa:active {
+            background: green;
+        }
+
+        .mov {
+            --color-sombra: red;
+            animation: mover 1.5s ease infinite;
+        } 
+
+        .mov:active {
+            animation-play-state: paused;
+        }
+
+        .mov:hover {
+            --color-sombra: green; /* Cambiamos el valor de la variable al pasar el ratón */
+
+        }
+        button {
+            font-size: 45px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            justify-content:center;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin: auto;
+            width: 300px;
+            height: 100px;
+            border: none;
+            transition: 0.4s ease-in;
+        }
+
+
+        @keyframes mover {
+            0% {
+                box-shadow: 0 0px var(--color-sombra);
+            }
+            33% {
+                 box-shadow: -100px 0px var(--color-sombra);
+            }
+
+            66% {
+                box-shadow: 0px 0px var(--color-sombra);
+            }
+
+            100% {
+                box-shadow: 100px 0px var(--color-sombra);
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="tra">Hola</button>
+    <br><br><br>
+    <button class="dou">Heyysushco</button>
+    <br><br><br>
+    <button class="apa">Pulsa</button>
+    <br><br><br>
+    <button class="mov">me muevo</button>
+</body>
+</html>
